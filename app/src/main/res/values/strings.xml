@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">KHA</string>
+    <string name="jul">JUL 2021</string>
+    <string name="income">수입 | </string>
+    <string name="expenditure">지출 | </string>
+
 </resources>
