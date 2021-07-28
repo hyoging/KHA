@@ -48,7 +48,22 @@ public class MainActivity extends TabActivity {
                 tp.setTextColor(Color.parseColor("#808080"));
             }
         });
+        tabHost.setOnTabChangedListener(new TabHost.OnTabChangeListener() {
+            @Override
+            public void onTabChanged(String tabId) {
+                TextView tp =(TextView)tabHost.getCurrentTabView().findViewById(android.R.id.title);
+                tp.setTextColor(Color.parseColor("#000000"));
 
+                for (int i = 0; i < tabHost.getTabWidget().getChildCount(); i++) {
+                    tabHost.getTabWidget().getChildAt(i)
+                            .setBackgroundColor(Color.parseColor("#FFFFD2")); // unselected
+                }
+
+                tabHost.getTabWidget().getChildAt(tabHost.getCurrentTab())
+                        .setBackgroundColor(Color.parseColor("#FAED7D")); // selected
+            }
+
+        });
 
     }
 }
