@@ -6,6 +6,7 @@ import android.app.TabActivity;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.widget.TabHost;
+import android.widget.TextView;
 
 public class MainActivity extends TabActivity {
 
@@ -39,24 +40,12 @@ public class MainActivity extends TabActivity {
             tabHost.getTabWidget().getChildAt(i).setBackgroundColor(Color.parseColor("#FFFFD2"));
         }
 
-        for (int tab = 0; tab < tabHost.getTabWidget().getChildCount(); ++tab){
-            tabHost.getTabWidget().getChildAt(tab).getLayoutParams().height = 200;
-        }
-        for(int i = 0; i < tabHost.getTabWidget().getChildCount(); i++){
-            tabHost.getTabWidget().getChildAt(i).setBackgroundColor(Color.parseColor("#FFFFD2"));
-        }
 
         tabHost.setOnTabChangedListener(new TabHost.OnTabChangeListener() {
             @Override
             public void onTabChanged(String tabId) {
-                for (int i = 0; i < tabHost.getTabWidget().getChildCount(); i++) {
-                    tabHost.getTabWidget().getChildAt(i)
-                            .setBackgroundColor(Color.parseColor("#FFFFD2")); // unselected
-                }
-
-                tabHost.getTabWidget().getChildAt(tabHost.getCurrentTab())
-                        .setBackgroundColor(Color.parseColor("#FAED7D")); // selected
-
+                TextView tp =(TextView)tabHost.getCurrentTabView().findViewById(android.R.id.title);
+                tp.setTextColor(Color.parseColor("#808080"));
             }
         });
 
