@@ -44,5 +44,19 @@
                 android:layout_height="wrap_content">
             </TabWidget>
 
+            <TextView
+                android:id="@+id/today"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="2020년12월11일"
+                android:textSize="30sp"
+                android:layout_above="@+id/calendarView"
+                android:layout_centerHorizontal="true"/>
+            <CalendarView
+                android:id="@+id/calendarView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_centerHorizontal="true"/>
         </LinearLayout>
     </TabHost>
